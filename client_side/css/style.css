@@ -1,0 +1,157 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+}
+
+body{
+    background: #1b262c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap{
+    width:1650px;
+    height:850px;
+    background: #bbe1fa;
+    position: relative;
+}
+
+.layer{
+    width:100%;
+    height:100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*main*/
+.layer-main{
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.layer-main .btn{
+    width:400px;
+    height:40px;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+/*select*/
+.layer-select{
+    /*display: flex;*/
+}
+.layer-select .level {
+    margin:20px 0;
+}
+.layer-select .btn{
+    width:160px;
+    margin:0 10px;
+}
+.layer-select .import{
+    width:160px;
+    height:35px;
+}
+.layer-select .import .input-import{
+    position:relative;
+    width:100%;
+    height:100%;
+    opacity: 0;
+    top:5px;
+    z-index:9;
+    cursor: pointer;
+}
+.layer-select .import .btn-import{
+    position: relative;
+    top:-25px;
+    left:-10px;
+}
+
+/*layer*/
+.layer-manage{
+    /*display: flex;*/
+}
+.layer-manage .maps{
+    width:80%;
+}
+.layer-manage .preview{
+    margin:20px auto;
+    display: flex;
+    cursor: pointer;
+}
+.layer-manage .preview img{
+    margin: auto;
+}
+.layer-manage .btn-export{
+    margin-top:30px;
+    width:360px;
+}
+
+/* rank */
+.layer-rank{
+    /*display: flex;*/
+}
+
+
+/*logo*/
+.logo{
+    position: absolute;
+    font-size:5em;
+    color:#0f4c75;
+    font-weight: bold;
+}
+.logo-start{
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.logo-running{
+    left:20px;
+    bottom: 10px;
+}
+
+
+/*btn*/
+#info{
+    position: absolute;
+    top:10px;
+    left:10px;
+    display: flex;
+    justify-content: space-around;
+}
+.glyphicon{
+    font-size:14px;
+    color:#fff;
+}
+.info{
+    width:45px;
+    height:45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    border-radius: 50%;
+    background:#3282b8;
+    margin-right:10px;
+    cursor: pointer;
+}
+
+.text{
+    margin-left:20px;
+    font-size:14px;
+}
+.text p{
+    color:#0f4c75;
+    margin:0 0 3px 0;
+}
+
+.flex{
+    display: flex;
+}

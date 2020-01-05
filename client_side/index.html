@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+    <!-- game main page -->
+    <div class="layer layer-main flex">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Instruction</button>
+        <button type="button" class="btn btn-primary" data-layer="select">start</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">ranking</button>
+    </div>
+
+    <!-- select level page -->
+    <div class="layer layer-select">
+        <h2>Difficulty Selection</h2>
+        <div class="level row">
+            <button type="button" class="btn btn-success" data-level="easy">Easy</button>
+            <button type="button" class="btn btn-warning" data-level="normal">Normal</button>
+            <button type="button" class="btn btn-danger" data-level="hard">Hard</button>
+        </div>
+        <div class="import">
+            <input type="file" class="input-import">
+            <button type="button" class="btn btn-primary btn-import">Import</button>
+        </div>
+    </div>
+
+    <!-- manage page -->
+    <div class="layer layer-manage">
+        <h2>Difficulty Selection <span class="show-level"><span class="label label-danger">HARD</span></span></h2>
+        <div class="maps row">
+            <div class="col-xs-4">
+                <div class="preview" data-select="0">
+                    <img src="images/map-1.png" alt="map">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="preview" data-select="1">
+                    <img src="images/map-1.png" alt="map">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="preview" data-select="2">
+                    <img src="images/map-1.png" alt="map">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="preview" data-select="3">
+                    <img src="images/map-1.png" alt="map">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="preview" data-select="4">
+                    <img src="images/map-1.png" alt="map">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="preview" data-select="5">
+                    <img src="images/map-1.png" alt="map">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-export">Export</button>
+    </div>
+
+    <!-- game play -->
+    <div class="layer layer-game">
+        <div class="map-box"></div>
+    </div>
+
+    <!-- rank page -->
+    <div class="layer layer-rank">
+        <h2>Ranking</h2>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#easy" aria-controls="easy" role="tab" data-toggle="tab">easy</a>
+            </li>
+            <li role="presentation"><a href="#normal" aria-controls="normal" role="tab" data-toggle="tab">normal</a>
+            </li>
+            <li role="presentation"><a href="#hard" aria-controls="hard" role="tab" data-toggle="tab">hard</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="easy">
+                <table class="table  ">
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Nickname</th>
+                        <th>Consumed Time</th>
+                        <th>Steps</th>
+                    </tr>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="normal">
+                <table class="table  ">
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Nickname</th>
+                        <th>Consumed Time</th>
+                        <th>Steps</th>
+                    </tr>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="hard">
+                <table class="table  ">
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Nickname</th>
+                        <th>Consumed Time</th>
+                        <th>Steps</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- logo -->
+    <div class="logo logo-running">MAZE</div>
+
+    <!-- info -->
+    <div id="info">
+        <span class="info info-prev"><i class="glyphicon glyphicon-chevron-left"></i></span>
+        <span class="info info-home"><i class="glyphicon glyphicon-home"></i></span>
+        <span class="info info-volume"><i class="glyphicon glyphicon-volume-up"></i></span>
+        <span class="info info-play"><i class="glyphicon glyphicon-pause"></i></span>
+        <span class="info info-sign"><i class="glyphicon glyphicon-info-sign"></i></span>
+        <div class="text">
+            <p>Nickname</p>
+            <span class="nickname">name</span>
+        </div>
+        <div class="text">
+            <p>Time</p>
+            <span class="time">0</span>
+        </div>
+        <div class="text">
+            <p>Used Steps</p>
+            <span class="used">0</span>
+        </div>
+        <div class="text">
+            <p>Remaining Steps</p>
+            <span class="steps">200</span>
+        </div>
+    </div>
+</div>
+
+<!-- Instruction modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Maze Instruction</h3>
+            </div>
+            <div class="modal-body">
+                <p> 1. You can use arrow keys in keyboard to control the character to move in the maze.</p>
+                <p> 2. The door is closed when the game started, you should get the key first, then the door will
+                    open.</p>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img src="images/instruction-1.png" alt="instruction" class="img-responsive">
+                    </div>
+                    <div class="col-xs-4">
+                        <img src="images/instruction-2.png" alt="instruction" class="img-responsive">
+                    </div>
+                </div>
+                <p>Enjoy the maze~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
