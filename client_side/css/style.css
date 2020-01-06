@@ -142,6 +142,15 @@ body{
     margin-right:10px;
     cursor: pointer;
 }
+.info>i:nth-child(2){
+    display: none;
+}
+.active>i:nth-child(1){
+    display: none;
+}
+.active>i:nth-child(2){
+    display: block;
+}
 
 .text{
     margin-left:20px;

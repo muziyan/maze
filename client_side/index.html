@@ -14,7 +14,9 @@
 
     <!-- game main page -->
     <div class="layer layer-main flex">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Instruction</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">
+            Instruction
+        </button>
         <button type="button" class="btn btn-primary" data-layer="select">start</button>
         <button type="button" class="btn btn-primary" data-layer="rank">ranking</button>
     </div>
@@ -25,7 +27,7 @@
         <div class="level row">
             <button type="button" class="btn btn-success" data-level="easy">Easy</button>
             <button type="button" class="btn btn-warning" data-level="normal">Normal</button>
-            <button type="button" class="btn btn-danger" data-level="hard">Hard</button>
+            <button type="button" class="btn btn-danger" data-level="herd">Hard</button>
         </div>
         <div class="import">
             <input type="file" class="input-import">
@@ -128,11 +130,17 @@
 
     <!-- info -->
     <div id="info">
-        <span class="info info-prev"><i class="glyphicon glyphicon-chevron-left"></i></span>
-        <span class="info info-home"><i class="glyphicon glyphicon-home"></i></span>
-        <span class="info info-volume"><i class="glyphicon glyphicon-volume-up"></i></span>
-        <span class="info info-play"><i class="glyphicon glyphicon-pause"></i></span>
-        <span class="info info-sign"><i class="glyphicon glyphicon-info-sign"></i></span>
+        <span class="info" data-info="prev"><i class="glyphicon glyphicon-chevron-left"></i></span>
+        <span class="info" data-info="home"><i class="glyphicon glyphicon-home"></i></span>
+        <span class="info" data-info="volume">
+            <i class="glyphicon glyphicon-volume-up"></i>
+            <i class="glyphicon glyphicon-volume-off"></i>
+        </span>
+        <span class="info" data-info="play">
+            <i class="glyphicon glyphicon-pause"></i>
+            <i class="glyphicon glyphicon-play"></i>
+        </span>
+        <span class="info" data-info="sign"><i class="glyphicon glyphicon-info-sign"></i></span>
         <div class="text">
             <p>Nickname</p>
             <span class="nickname">name</span>
@@ -181,6 +189,7 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/_function.js"></script>
 <script src="js/View.js"></script>
+<script src="js/maze.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

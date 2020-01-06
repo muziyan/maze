@@ -42,7 +42,6 @@ class View {
     }
 
     do_out(name){
-        console.log(name)
         if (this.fns[name] && this.fns[name].out) this.fns[name].out();
     }
 
