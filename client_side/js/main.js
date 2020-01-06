@@ -44,10 +44,11 @@ view.listen("main", ()=> {
 $("[data-level]").on("click",function () {
     let level = $(this).data("level");
     maze.setLevel(level);
+    view.layerUpdate("manage")
 });
 
 let preview = $(".preview");
 view.listen("manage",()=>{
-    console.log(maze.color)
     $(".label").text(maze.levels).attr("class",`label label-${maze.color}`)
+    maze.generate();
 });

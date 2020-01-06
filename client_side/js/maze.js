@@ -55,10 +55,37 @@ class Maze {
         this.levels = level;
     }
 
-    generate(){
+    generate() {
         let map = new Array(this.h).fill(1).map(() => new Array(this.w).fill(1));
-        console.log(map)
+        let xMid = this.w / 2 | 1;
+        let yMid = this.h / 2 | 1;
+        let queue = [
+            [xMid, yMid]
+        ];
+        map[yMid][xMid] = 0;
+        while (queue.length){
+            let [x,y] = queue.last();
+            let arounds = [
+                [x-2, y],
+                [x+2, y],
+                [x, y-2],
+                [x, y+2]
+            ].filter(pos => map[pos[1]] && map[pos[1]][pos[0]]);
+            let next = arounds.rand();
+            if (next){
+                map[next[1]][next[0]] = 0;
+                map[(next[1] + y)/2][(next[0]+x)/2] = 0;
+                queue.push(next)
+            }else queue.pop();
+        }
+
+        map[1][0] = 0;
+        map[this.h - 2][this.w - 1] = 0;
+        this.maps.push(map);
+        return (this.maps.length < 6) ? this.generate() : this.maps;
     }
+
+
 
 
 
