@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+</head>
+<body>
+
+
+</body>
+<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="js/_function.js"></script>
+<script src="js/maze.js"></script>
+<script>
+    const maze = new Maze();
+
+    maze.setLevel("easy");
+    maze.generate();
+    const canvas = document.createElement("canvas");
+    $("body").append(canvas);
+    const ctx = canvas.getContext('2d');
+
+    // ctx.fillStyle = "red";
+    // ctx.fillRect(0,0,30,30);
+    //
+    // ctx.fillStyle = "black";
+    // ctx.fillRect(30,0,30,30);
+
+
+    let map = maze.maps[0];
+    canvas.width = map.length * 10;
+    canvas.height = map[0].length * 10;
+    let [x,y] = [0,0];
+    map.map((v,i)=>{
+        y = i * 10;
+        v.map((val,inx) =>{
+            x = inx * 10;
+            ctx.fillStyle = val === 0 ? "#fff" : "black";
+            ctx.fillRect(x,y,10,10);
+        });
+    })
+
+
+
+
+
+
+</script>
+</html>

@@ -18,9 +18,9 @@ class Maze {
                 color:"danger",
                 step:350,
                 w:45,
-                h:24
+                h:25
             }
-        }
+        };
 
         //maze data
         this.maps = [];
@@ -85,18 +85,18 @@ class Maze {
         return (this.maps.length < 6) ? this.generate() : this.maps;
     }
 
-
-
-
+    select (index) {
+        this.map = JSON.parse(JSON.stringify(this.maps[index]));
+    }
 
 
     //create music
-    playAudio(name,loop = false){
-        let $audio = $(`<audio src="./music/${name}.mp3" autoplay ${loop ? 'loop' : ""}></audio>`).on("ended",function () {
-            this.remove();
-        })
-        let audio = $audio.get(0);
-        audio.volume = +this.volume;
-        return $audio;
+    playAudio (name, loop = false) {
+        let $audio = $(`<audio src="music/${name}.mp3" autoplay ${loop ? 'loop' : ''}></audio>`).on('ended', function () {
+            this.remove()
+        }).appendTo('body')
+        let audio = $audio.get(0)
+        audio.volume = +this.volume
+        return $audio
     }
 }

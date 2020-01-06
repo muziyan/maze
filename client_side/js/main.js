@@ -20,6 +20,7 @@ $("[data-info]").on("click",function () {
             $(this)[`${maze.playing  ? 'add' : 'remove'}Class`]("active");
             break;
         case "sign":
+
             break;
     }
 });
@@ -51,4 +52,18 @@ let preview = $(".preview");
 view.listen("manage",()=>{
     $(".label").text(maze.levels).attr("class",`label label-${maze.color}`)
     maze.generate();
+    preview.each((index,box)=>{
+        $(box).find("img").remove();
+        drawMaze(maze.maps[index],$(box),8,8)
+    })
 });
+
+$('[data-select]').on("click",function () {
+    maze.select($(this).data("select"));
+    view.layerUpdate("game");
+});
+
+view.listen("game",()=>{
+    drawMaze(maze.map,$(".map-box"),25,25)
+});
+

@@ -94,6 +94,10 @@ body{
     margin-top:30px;
     width:360px;
 }
+.layer-manage .preview .canvas{
+    margin: auto;
+}
+
 
 /* rank */
 .layer-rank{
