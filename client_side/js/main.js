@@ -20,7 +20,7 @@ $("[data-info]").on("click",function () {
             $(this)[`${maze.playing  ? 'add' : 'remove'}Class`]("active");
             break;
         case "sign":
-
+            maze.tips = !maze.tips;
             break;
     }
 });
@@ -48,22 +48,25 @@ $("[data-level]").on("click",function () {
     view.layerUpdate("manage")
 });
 
+// create maze preview
 let preview = $(".preview");
 view.listen("manage",()=>{
-    $(".label").text(maze.levels).attr("class",`label label-${maze.color}`)
+    $(".label").text(maze.level).attr("class",`label label-${maze.color}`)
     maze.generate();
     preview.each((index,box)=>{
-        $(box).find("img").remove();
+        $(box).empty();
         drawMaze(maze.maps[index],$(box),8,8)
     })
 });
 
+//Determine the maze
 $('[data-select]').on("click",function () {
     maze.select($(this).data("select"));
-    view.layerUpdate("game");
+    maze.name = prompt("Input your name first");
+    if (maze.name) view.layerUpdate("game");
 });
-
+// generate maze
 view.listen("game",()=>{
-    drawMaze(maze.map,$(".map-box"),25,25)
+    maze.init($(".map-box"));
 });
 

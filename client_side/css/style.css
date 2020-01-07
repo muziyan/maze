@@ -99,6 +99,43 @@ body{
 }
 
 
+/*game*/
+.layer-game .map-box{
+    margin-top:40px;
+    z-index:99;
+    position: relative;
+}
+.layer-game .map-box .box{
+    position:absolute;
+    background: #0f4c75;
+    width:30px;
+    height:30px;
+}
+.key{
+    position:absolute;
+    width:30px;
+    height:30px;
+    background: url("../images/key.png") no-repeat;
+}
+.show-tips .tips{
+    position:absolute;
+    width:30px;
+    height:30px;
+    background:#337ab7;
+}
+.player{
+    width:30px;
+    height:30px;
+    background: url("../images/player.png") no-repeat;
+}
+.door{
+    width:30px;
+    height:30px;
+    background:#000;
+    position: absolute;
+}
+
+
 /* rank */
 .layer-rank{
     /*display: flex;*/
