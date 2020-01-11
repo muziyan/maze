@@ -167,6 +167,9 @@ body{
     display: flex;
     justify-content: space-around;
 }
+#info .show-info{
+    opacity: 1;
+}
 .glyphicon{
     font-size:14px;
     color:#fff;
@@ -183,6 +186,12 @@ body{
     margin-right:10px;
     cursor: pointer;
 }
+.info:nth-child(3),
+.info:nth-child(4),
+.info:nth-child(5){
+    opacity: 0;
+}
+
 .info>i:nth-child(2){
     display: none;
 }
@@ -194,6 +203,7 @@ body{
 }
 
 .text{
+    opacity: 0;
     margin-left:20px;
     font-size:14px;
 }

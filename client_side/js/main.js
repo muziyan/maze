@@ -1,6 +1,16 @@
 const view = new View("main");
 const maze = new Maze();
 
+//win
+maze.win = function(){
+    
+};
+
+//lose
+maze.lose = function(){
+
+};
+
 //info btn
 $("[data-info]").on("click",function () {
     let info = $(this).data("info");
@@ -13,11 +23,11 @@ $("[data-info]").on("click",function () {
             break;
         case "volume":
             maze.volume = !maze.volume;
-            $(this)[`${maze.volume  ? 'add' : 'remove'}Class`]("active");
+            $(this)[`${maze.volume  ? 'remove' : 'add'}Class`]("active");
             break;
         case "play":
             maze.playing = !maze.playing;
-            $(this)[`${maze.playing  ? 'add' : 'remove'}Class`]("active");
+            $(this)[`${maze.playing  ? 'remove' : 'add'}Class`]("active");
             break;
         case "sign":
             maze.tips = !maze.tips;
@@ -31,7 +41,6 @@ $("[data-layer]").on("click",function () {
     view.layerUpdate($(this).data("layer"));
 });
 
-
 // set logo class
 let $logo = $(".logo");
 view.listen("main", ()=> {
@@ -39,7 +48,6 @@ view.listen("main", ()=> {
 },()=>{
     $logo.removeClass("logo-start")
 });
-
 
 // select level
 $("[data-level]").on("click",function () {
@@ -65,8 +73,15 @@ $('[data-select]').on("click",function () {
     maze.name = prompt("Input your name first");
     if (maze.name) view.layerUpdate("game");
 });
+
 // generate maze
 view.listen("game",()=>{
     maze.init($(".map-box"));
+    $(".info").addClass("show-info");
+    $(".text").addClass("show-info");
+},()=>{
+    $(".info").removeClass("show-info");
+    $(".text").removeClass("show-info");
 });
+
 
